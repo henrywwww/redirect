@@ -19,7 +19,7 @@
 </head>
 
 <body>
-測試自動轉址
+測試按鈕轉址
 <button onclick="tapToRedirect()">按按鈕來轉址</button>
 </body>
 <script>
@@ -31,7 +31,7 @@
     let value = params.replace("?redirect=",""); // "some_value"
     console.log(value);
     if(value != null){
-        location.href = value;
+        // location.href = value;
     }
 
     function tapToRedirect(){
