@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://localhost:8080/mobilenetbank/ServiceLocation/prompt -->
+<html lang="zh-Hant-TW" xmlns="http://www.w3.org/1999/xhtml">
+<!-- include ui_PublicTW.inc end -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>測試轉址網路銀行</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+ 
+</head>
+
+<body>
+測試window.open
+<button onclick="tapToRedirect()">按按鈕來轉址</button>
+</body>
+<script>
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //   get: (searchParams, prop) => searchParams.get(prop),
+    // });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    let params = window.location.search
+    let value = params.replace("?redirect=",""); // "some_value"
+    console.log(value);
+    if(value != null){
+        window.open(value, '_blank').focus();
+    }
+
+    function tapToRedirect(){
+        location.href = value;
+    }
+</script>
+</html>
